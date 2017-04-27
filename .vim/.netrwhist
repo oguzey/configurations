@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/home/ikobein/repo/stm32-base/stm32-cmake'
+let g:netrw_dirhist_2='/home/oleg/dev/at/new-release-stage-base/craton2-build/craton2-yocto-build/meta-autotalks/meta-craton2/conf/machine/include'
+let g:netrw_dirhist_3='/home/oleg/dev/at/craton2-build/craton2-yocto-build/sources/u-boot/sta-sqi-mmc-flashloader_defconfig'
+let g:netrw_dirhist_4='/home/oleg/dev/at/craton2-build/craton2-yocto-build/sources/u-boot/drivers/mtd'
+let g:netrw_dirhist_5='/home/oleg/dev/at/craton2-build/craton2-yocto-build/sources/u-boot/drivers/mtd/nand'
+let g:netrw_dirhist_6='/home/oleg/dev/at/craton2-build/craton2-yocto-build/sources/u-boot/drivers/mtd'
+let g:netrw_dirhist_7='/home/oleg/dev/at/craton2-build/craton2-yocto-build/sources/u-boot/drivers/mtd/ubi'

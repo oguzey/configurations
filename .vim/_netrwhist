@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/home/ikobein/dev/era/git/slimsrp/Samsung_ERA_Agile/slimsrp/slim_srp_test_tool_v2/octave_scripts'
+let g:netrw_dirhist_2='/home/ikobein/dev/era/git/slimsrp/Samsung_ERA_Agile/slimsrp/slim_srp_test_tool_v2/octave_scripts/util'
+let g:netrw_dirhist_3='/home/ikobein/dev/era/git/slimsrp/Samsung_ERA_Agile/slimsrp/slim_srp_test_tool_v2/octave_scripts'
+let g:netrw_dirhist_4='/home/ikobein/dev/era/git/slimsrp/Samsung_ERA_Agile/slimsrp/slim_srp_test_tool_v2/octave_scripts/util'
+let g:netrw_dirhist_5='/home/ikobein/Downloads'
+let g:netrw_dirhist_6='/home/ikobein/dev/digi/dev/XBee Demo/AmexBIA/Proto/NB/raw_data'
+let g:netrw_dirhist_7='/home/ikobein/dev/digi/dev/XBee Demo/AmexBIA/Proto/NB/test1_extract'
