@@ -1,0 +1,12 @@
+[user]
+        email = [mail]
+	name = Oleh Huzei
+[color]
+	ui = auto
+[diff]
+	external = /opt/diff.py
+[merge]
+	tool = kdiff3
+[mergetool "kdiff3"]
+	path = /usr/bin/kdiff3
+	trustExitCode = false

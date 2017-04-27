@@ -1,2 +1,2 @@
 # configurations
-My configurations for bash, vim
+My configurations for bash, vim, git
