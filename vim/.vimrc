@@ -251,3 +251,10 @@ let mapleader = ","
 " easier moving between tabs
 map <Leader>n <esc>:tabprevious<CR>
 map <Leader>m <esc>:tabnext<CR>
+
+" set spell checking
+" Use z= to correct word
+"     zg to add word to dict
+"     zw to mark word as incorrect
+" To move to a misspelled word, use ]s and [s.
+set spell spelllang=en_us
