@@ -257,4 +257,5 @@ map <Leader>m <esc>:tabnext<CR>
 "     zg to add word to dict
 "     zw to mark word as incorrect
 " To move to a misspelled word, use ]s and [s.
-set spell spelllang=en_us
+map <F10> <Esc>:set spell spelllang=en_us<CR>
+map <F11> <Esc>:set nospell<CR>
