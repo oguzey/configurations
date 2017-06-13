@@ -13,7 +13,7 @@ sed -i -e 's/\[mail\]/${git_mail}/g' ~/.gitconfig
 cp ./git/diff.py /opt/diff.py
 
 # setup bash
-cp ./bash/bashrc ~/.bashrc
+cat ./bash/bashrc_append >> ~/.bashrc
 
 # setup vim
 # install Vundle plugin
