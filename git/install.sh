@@ -6,8 +6,7 @@ echo "Configuring git ..."
 source common_funcs.sh
 
 # install git related tools
-git_tools="git meld kdiff3"
-install_apps ${git_tools}
+install_apps "git meld kdiff3"
 
 cd git
 

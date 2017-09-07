@@ -33,7 +33,7 @@ app_list="make autoconf cmake realpath htop cscope terminator doublecmd-qt okula
 while true; do
 	read -p "Do you want to install ${app_list} applications? (y/n) " yn
     	case $yn in
-        	[Yy]* ) install_apps ${app_list}; break;;
+        	[Yy]* ) install_apps "${app_list}"; break;;
         	[Nn]* ) break;;
         	* ) echo "Please answer y(yes) or n(no).";;
   	esac
