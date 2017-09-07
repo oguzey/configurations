@@ -1,33 +1,58 @@
 #!/bin/bash -e
 
-APP_LIST="git make autoconf cmake realpath vim vim-gtk meld kdiff3 grc htop \
-          cscope terminator doublecmd-qt okular"
+source common_funcs.sh
 
-sudo apt update
+PACKAGES_DIR="./packages"
 
-for app in ${APP_LIST}; do
-    dpkg -s "$app" >/dev/null 2>&1 && {
-        echo "$app is installed.";
-    } || {
-        echo "$app is installing...";
-        sudo apt install $app -y;
-    }
+##################################################################################
+#  Install skype 4.3.0
+#
+install_skype_4_3 () {
+	echo -n "Installing skype 4.3.0"
+	sudo dpkg --add-architecture i386
+	sudo apt-get update
+	sudo dpkg -i ${PACKAGES_DIR}/skype_4.3.0.37.deb || true
+        sudo apt install -f -y
+	sudo dpkg -i ${PACKAGES_DIR}/skype_4.3.0.37.deb
+}
+
+while true; do
+        read -p "Do you want to install skype 4.3.0 ? (y/n) " yn
+        case $yn in
+                [Yy]* ) install_skype_4_3; break;;
+                [Nn]* ) break;;
+                * ) echo "Please answer y(yes) or n(no).";;
+        esac
 done
 
-echo -n "Installing deb packages from packages directory ..."
-cd packages
-for app_deb in *.deb; do
-    echo -n "Installing $(tput setaf 2)${app_deb}$(tput sgr 0)"
-    sudo dpkg -i "${app_deb}"
+#################################################################################
+# Install other applications
+#
+app_list="make autoconf cmake realpath htop cscope terminator doublecmd-qt okular pdftk"
+
+while true; do
+	read -p "Do you want to install ${app_list} applications? (y/n) " yn
+    	case $yn in
+        	[Yy]* ) install_apps ${app_list}; break;;
+        	[Nn]* ) break;;
+        	* ) echo "Please answer y(yes) or n(no).";;
+  	esac
 done
 
-echo -n "Apps in tarball available in packages directory:"
+###############################################################################
+# Print info about tools in archives
+#
+cd ${PACKAGES_DIR}
+echo -e "Apps in tarball available in '${PACKAGES_DIR}' directory:"
 for app_tar in *.tar*; do
-    echo -n "\t\t$(tput setaf 2)${app_tar}$(tput sgr 0)"
+    echo -e "\t\t$(tput setaf 2)${app_tar}$(tput sgr 0)"
 done
-cd -
+cd - > /dev/null
 
-echo -n "Please, install manually next tools:"
-echo -n "\t\t$(tput setaf 2)Sublime Text 3$(tput sgr 0) via     https://www.sublimetext.com/3"
-echo -n "\t\t$(tput setaf 2)Skype for Linux$(tput sgr 0) via    https://www.skype.com/en/download-skype/skype-for-linux/"
+##############################################################################
+# Print info about tools which need to download
+#
+echo -e "Please, install manually next tools:"
+echo -e "\t\t$(tput setaf 2)Sublime Text 3$(tput sgr 0) via     https://www.sublimetext.com/3"
+echo -e "\t\t$(tput setaf 2)Skype for Linux$(tput sgr 0) via    https://www.skype.com/en/download-skype/skype-for-linux/"
 echo -e "\n"

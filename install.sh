@@ -1,21 +1,16 @@
 #!/bin/bash -e
 
-# install applications
+setup_dirs="bash git vim"
+
+for dir in ${setup_dirs}; do
+	while true; do
+    		read -p "Do you want to configure ${dir} tool? (y/n) " yn
+    		case $yn in
+        		[Yy]* ) ./${dir}/install.sh; break;;
+        		[Nn]* ) break;;
+        		* ) echo "Please answer y(yes) or n(no).";;
+    		esac
+	done
+done
+
 ./install_apps.sh
-
-# setup git
-echo -n "Please, enter your email: "
-read git_mail
-
-cp ./git/gitconfig ~/.gitconfig
-sed -i -e 's/\[mail\]/${git_mail}/g' ~/.gitconfig
-
-cp ./git/diff.py /opt/diff.py
-
-# setup bash
-cat ./bash/bashrc_append >> ~/.bashrc
-
-# setup vim
-# install Vundle plugin
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-cp -r ./vim/* ~/*
