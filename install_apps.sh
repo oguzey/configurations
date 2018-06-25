@@ -28,7 +28,7 @@ done
 #################################################################################
 # Install other applications
 #
-app_list="make autoconf cmake realpath htop cscope terminator doublecmd-qt okular pdftk"
+app_list="make autoconf cmake realpath htop cscope terminator doublecmd-qt okular pdftk yakuake"
 
 while true; do
 	read -p "Do you want to install ${app_list} applications? (y/n) " yn
