@@ -1,6 +1,6 @@
 [user]
-        email = [mail]
-	name = Oleh Huzei
+        email = {email}
+	name = {name}
 [color]
 	ui = auto
 [diff]
