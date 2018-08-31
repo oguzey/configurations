@@ -1,5 +1,6 @@
 set hlsearch
-set guifont=Courier
+" set guifont=Courier
+set guifont=Courier\ New\ 11
 set number
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
