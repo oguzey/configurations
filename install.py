@@ -35,21 +35,25 @@ def file_write(filename, content):
 
 
 def exec(cmd):
-    sh = Popen(cmd, shell=True, stdout=PIPE, stderr=PIPE)
+    # universal_newlines=True - means open in text mode
+    # bufsize=0 - means unbuffered (read and write are one system call and can return short)
+    sh = Popen(cmd, shell=True, stdout=PIPE, stderr=PIPE, universal_newlines=True, bufsize=0)
     logger.info("Run command: %s", cmd)
-    output = sh.communicate()
-    if isinstance(output, tuple):
-        for data in output:
-            if isinstance(data, bytes):
-                logger.info("\n%s" % data.decode('ascii'))
-            else:
-                logger.info("{}".format(data))
-    else:
-        logger.info("{}".format(output))
+    # But do not wait till the command finish, start displaying output immediately
+    stdout_lines_iterator = iter(sh.stdout.readline, "")
+    stderr_lines_iterator = iter(sh.stderr.readline, "")
+    while sh.poll() is None:
+        for line in stdout_lines_iterator:
+            nline = line.rstrip()
+            logger.info(nline)
+
+        for line in stderr_lines_iterator:
+            nline = line.rstrip()
+            logger.error(nline)
     
     code = int(sh.returncode)
     if code != 0:
-        die("The command finished with error code: %d", code)
+        die("The command finished with error code: %d" % code)
 
 
 def apt_update():
@@ -68,7 +72,7 @@ def multiline_apply(multilined_data_str, handler):
 
 
 def file_copy_with_update(src_file, dest_file, values):
-    src_content = file_read(src_file)
+    src_content = file_read(os.path.expanduser(src_file))
     if src_content is None:
         die("File '%s' not found" % src_file)
 
@@ -76,7 +80,7 @@ def file_copy_with_update(src_file, dest_file, values):
         dst_content = src_content.format(**values)
     except KeyError as key_error:
         die("Value for '%s' was not provided" % str(key_error))
-    file_write(dest_file, dst_content)
+    file_write(os.path.expanduser(dest_file), dst_content)
 
 
 def packages_handler(section, value):
@@ -84,7 +88,9 @@ def packages_handler(section, value):
     if value is None:
         logger.debug("No 'packages' value is provided")
         return
-    apt_install(value)
+    # make one line value
+    values = value.split('\n')
+    apt_install("".join(values))
 
 
 def sh_handler(section, value):
