@@ -41,4 +41,8 @@ alias q="cd .."
 alias g='vim -g'
 
 alias cs='cscope -q -R -b'
-gr () { grep -rnIi --color "$1" "${2:-.}"; }
+gr () { grep -rnI --color "$1" "${2:-.}"; }
+gri () { grep -rnIi --color "$1" "${2:-.}"; }
+
+# start tor browser
+#tor_start() { cd /opt/tor-browser_en-US && ./start-tor-browser.desktop; }
