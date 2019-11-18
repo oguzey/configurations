@@ -1,13 +1,15 @@
 [user]
-        email = {email}
-	name = {name}
+    email = {email}
+    name = {name}
 [color]
-	ui = auto
+    ui = auto
 [diff]
-	external = /opt/diff.py
+    external = /opt/diff.py
 [merge]
-	tool = kdiff3
+    tool = kdiff3
 [mergetool "kdiff3"]
-	path = /usr/bin/kdiff3
-        keepBackup = false
-	trustExitCode = false
+    path = /usr/bin/kdiff3
+    keepBackup = false
+    trustExitCode = false
+[core]
+    editor = vim
