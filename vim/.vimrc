@@ -201,10 +201,14 @@ filetype plugin indent on    " required
 execute pathogen#infect()
 syntax on
 
-set expandtab
-set shiftwidth=4
-set softtabstop=4
 filetype plugin indent on
+" show existing tab with 4 spaces width
+set tabstop=4
+set softtabstop=4
+" when indenting with '>', use 4 spaces width
+set shiftwidth=4
+" On pressing tab, insert 4 spaces
+set expandtab
 
 nnoremap <F3> :execute ":!git difftool " getline('.')<CR>
 
