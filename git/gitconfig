@@ -3,8 +3,13 @@
     name = {name}
 [color]
     ui = auto
+    diff = auto
+    status = auto
+    branch = auto
 [diff]
     external = /opt/diff.py
+[pull]
+    rebase = true
 [merge]
     tool = kdiff3
 [mergetool "kdiff3"]
