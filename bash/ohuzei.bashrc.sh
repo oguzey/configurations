@@ -1,7 +1,3 @@
-###############################################################################
-########################## My custom changes ##################################
-###############################################################################
-
 # Source git completion
 if [ -f /usr/share/git-core/contrib/completion/git-prompt.sh ]; then
 	. /usr/share/git-core/contrib/completion/git-prompt.sh
@@ -24,12 +20,12 @@ alias gitg="git grep -n"
 
 # colors
 export PAGER=less
-export LESS_TERMCAP_mb=$'\E[01;33m' # цвет мерцающего стиля
-export LESS_TERMCAP_md=$'\E[01;31m' # цвет полужирного стиля
+export LESS_TERMCAP_mb=$'\E[01;33m'
+export LESS_TERMCAP_md=$'\E[01;31m'
 export LESS_TERMCAP_me=$'\E[0m'
-export LESS_TERMCAP_so=$'\E[01;42;30m' # цвет и фон служебной информации
+export LESS_TERMCAP_so=$'\E[01;42;30m'
 export LESS_TERMCAP_se=$'\E[0m'
-export LESS_TERMCAP_us=$'\E[01;32m' # цвет подчеркнутого стиля
+export LESS_TERMCAP_us=$'\E[01;32m'
 export LESS_TERMCAP_ue=$'\E[0m'
 
 export GREP_COLOR="1;31"
