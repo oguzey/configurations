@@ -26,10 +26,8 @@ if ! grep -qq 'zsh-autosuggestions.zsh' ~/.zshrc; then
 fi
 
 echo "Installing OhMyPosh"
-curl -s https://ohmyposh.dev/install.sh | bash -s
+curl -s https://ohmyposh.dev/install.sh | sudo bash -s
 cp zsh/oh-my-posh-microverse-power.omp.json "$ZSHD_DIR/oh-my-posh-microverse-power.omp.json"
-
-
 
 if ! grep -qq 'oh-my-posh' ~/.zshrc; then
     echo 'eval "$(oh-my-posh init zsh --config ~/.zshrc.d/oh-my-posh-microverse-power.omp.json)"' >> ~/.zshrc
