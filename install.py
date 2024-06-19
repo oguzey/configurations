@@ -169,5 +169,5 @@ if __name__ == "__main__":
     for section in sections:
         if arg_section and arg_section != section:
             continue
-        sh_handler(section, config[section].get(key_sh, None))
         packages_handler(section, config[section].get(key_packages, None))
+        sh_handler(section, config[section].get(key_sh, None))
