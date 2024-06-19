@@ -72,7 +72,7 @@
             "always_enabled": true
           },
           "style": "powerline",
-          "template": " $ ",
+          "template": "{{ if gt .Code 0}} x {{ else }} \u2713 {{ end }}",
           "type": "exit"
         }
       ],
@@ -85,7 +85,7 @@
         {
           "foreground": "#f3f6f4",
           "style": "plain",
-          "template": "\u279c ",
+          "template": "$ ",
           "type": "text"
         }
       ],
