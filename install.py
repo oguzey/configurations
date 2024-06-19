@@ -90,7 +90,7 @@ def pkg_manager_update():
 def pkg_manager_install(pkgs):
     logger.info(f"Install following packages: {pkgs}")
     if os_is_ubuntu():
-        exec(f"sudo apt-get install -y {pkgs}")
+        exec(f"sudo DEBIAN_FRONTEND=noninteractive apt-get install -y {pkgs}")
     elif os_is_fedora():
         exec(f"sudo dnf install -y {pkgs}")
     else:
