@@ -11,7 +11,7 @@ fi
 
 echo "Installing zsh-syntax-highlighting"
 git clone --depth 1 --branch "0.8.0" https://github.com/zsh-users/zsh-syntax-highlighting.git "$ZSHD_DIR/zsh"
-mv "$ZSHD_DIR/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" "$ZSHD_DIR/zsh-syntax-highlighting.zsh"
+mv "$ZSHD_DIR/zsh/zsh-syntax-highlighting.zsh" "$ZSHD_DIR/zsh-syntax-highlighting.zsh"
 rm -rf "$ZSHD_DIR/zsh"
 if ! grep -qq 'zsh-syntax-highlighting.zsh' ~/.zshrc; then
     echo '. ~/.zshrc.d/zsh-syntax-highlighting.zsh' >> ~/.zshrc
