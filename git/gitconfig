@@ -18,3 +18,5 @@
     trustExitCode = false
 [core]
     editor = vim
+[submodule]
+    recurse = true
