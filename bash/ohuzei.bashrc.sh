@@ -36,8 +36,8 @@ alias traceroute="grc traceroute"
 alias netstat="grc netstat"
 
 # some more ls aliases
-alias ll='grc ls -lFha --color'
-alias l='grc ls -CFl --color'
+alias ll='ls -lFha --color'
+alias l='ls -CFl --color'
 alias la='ls -A --color'
 
 # other aliases
