@@ -2,6 +2,7 @@ set -ex
 
 ZSHD_DIR="~/.zshrc.d"
 mkdir -p "$ZSHD_DIR"
+test -f ~/.zshrc || touch ~/.zshrc
 
 cp ./zsh/ohuzei.zshrc.zsh "$ZSHD_DIR/ohuzei.zsh"
 if ! grep -qq 'ohuzei.zsh' ~/.zshrc; then
